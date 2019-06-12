@@ -4,7 +4,7 @@ var axios = require("axios");
 var cheerio = require("cheerio");
 var db = require("./models");
 
-var PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 var app = express();
 
@@ -12,11 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-/*var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoroyal";
 
-mongoose.connect(MONGODB_URI);*/
+mongoose.connect(MONGODB_URI);
 
-mongoose.connect("mongodb://localhost/newspeople5", { useNewUrlParser: true });
+//mongoose.connect("mongodb://localhost/newspeople5", { useNewUrlParser: true });
 
 app.get("/", function (req, res) {
 
